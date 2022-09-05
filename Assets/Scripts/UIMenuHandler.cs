@@ -41,4 +41,11 @@ public class UIMenuHandler : MonoBehaviour
         Application.Quit();
 #endif
     }
+
+    public void ResetScore()
+    {
+        DataManager.Instance.HighScore = 0;
+        DataManager.Instance.SaveScore();
+        highScore.text = "High score : " + DataManager.Instance.HighScoreName + " : " + DataManager.Instance.HighScore;
+    }
 }
